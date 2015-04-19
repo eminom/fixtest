@@ -1,9 +1,9 @@
 from distutils.core import setup, Extension
 
 def genModule():
-	from os import uname
+	from platform import system
 	extra_ca = ["/EHsc"]  #Originated for MSVC++
-	if uname()[0] == 'Darwin':
+	if 'Windows' != system():
 		extra_ca = []
 	module1 = Extension('FixTest',
 		sources = ['py3fmath.cc',
