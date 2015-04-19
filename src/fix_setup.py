@@ -1,7 +1,12 @@
 from distutils.core import setup, Extension
 
-module1 = Extension('FixTest',
-    sources = ['py3fmath.cc',
+def genModule():
+	from os import uname
+	extra_ca = ["/EHsc"]  #Originated for MSVC++
+	if uname()[0] == 'Darwin':
+		extra_ca = []
+	module1 = Extension('FixTest',
+		sources = ['py3fmath.cc',
               'py3fmathmod.cc'
               ],
               #include_dirs= ["C:/Boost/include/boost-1_57"],
@@ -10,12 +15,13 @@ module1 = Extension('FixTest',
               #      			("HAVE_REMOTE",None)],
               #library_dirs = ["F:/Develop/WpdPack4.1.2/Lib/x64"],
               #libraries = ["wpcap","ws2_32","iphlpapi"],
-              extra_compile_args = ["/EHsc"]
-)              
+              extra_compile_args = extra_ca
+	)              
+	return module1
 
 setup (name = 'Fixed16MathTest:Push the limits',
        version = '1.0',
        description = "You may be gone, but you're never over",
        author = 'Eminem',
        author_email = 'hai.bai.cn@gmail.com',
-       ext_modules = [module1])
+       ext_modules = [genModule()])

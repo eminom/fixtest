@@ -4,7 +4,7 @@
 //#include "structmember.h"
 #include "python.h"
 #include "py3fmathmod.h"
-//#include "py3fmath.h"
+#include "cross.h"
 
 #define FIX16ModFunc(a) _FIX16ModFunc__##a
 
