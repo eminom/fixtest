@@ -29,4 +29,7 @@ if RUBY_PLATFORM =~ /darwin/ then
 elsif RUBY_PLATFORM =~ /mingw/ then
 	puts "Building under Windows"
 	system "python #{py} #{action}"
+elsif RUBY_PLATFORM =~ /linux/ then
+	puts "Building under Linux"
+	system "python3 #{py} #{action}"
 end
