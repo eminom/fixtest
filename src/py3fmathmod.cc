@@ -2,7 +2,7 @@
 
 //~ What the hell is this
 //#include "structmember.h"
-#include "python.h"
+#include "Python.h"
 #include "py3fmathmod.h"
 #include "cross.h"
 

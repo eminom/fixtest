@@ -9,7 +9,7 @@
 // If you have any problem using this fixed point lib, please fight the origin author.
 // 
 
-#include "python.h"
+#include "Python.h"     //Windows and MacOSX do care about capitals
 #include "fp/fixed_class.h"
 #include "fp/fixed_func.h"
 
